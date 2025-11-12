@@ -65,8 +65,7 @@ The API should then be accessible at http://localhost:5000/ (or the configured h
   
 **🗺️ API Endpoints**
 The following are the typical RESTful endpoints provided by this backend. The resource name (/resources) may vary depending on the data model defined in app.py
-## Excel export documentation
-## Data Structure for Export
+
 | Method | Path | Description |
 |--------|------|-------------|
 | GET | /resources | Retrieve a list of all resources. |
