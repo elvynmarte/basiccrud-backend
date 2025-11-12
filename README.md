@@ -66,13 +66,19 @@ The API should then be accessible at http://localhost:5000/ (or the configured h
 **🗺️ API Endpoints**
 The following are the typical RESTful endpoints provided by this backend. The resource name (/resources) may vary depending on the data model defined in app.py
 
-| Method | Path | Description |
-|--------|------|-------------|
-| GET | /resources | Retrieve a list of all resources. |
-| GET | /resources/:id | Retrieve a single resource by its ID. |
-| POST | /resources | Create a new resource. |
-| PUT | /resources/:id | Update an existing resource by its ID. |
-| DELETE | /resources/:id | Delete a resource by its ID. |
+| Method | Path | Params | Description |
+|--------|------|--------|-------------|
+| POST | /get-login | email, passw | Authenticate user to log in. |
+| GET | /get-users | N/D | Get all users data. |
+| POST | /iu-user | name,email, passw, active, id | Insert / Update user. |
+| POST | /reset-pass | passw, npassw, cpassw, id | Reset current password for user loged. |
+| POST | /del-user | id | Delete a user by its ID. |
+| GET | /get-items | N/D | Get all items. |
+| POST | /iu-item | name, type,price,quantity,id | Insert / Update Item. |
+| POST | /del-item | id | Delete a item by its ID. |
+| GET | /get-types | N/D | Get all types. |
+| POST | /iu-type | description,active, id | Insert / Update type. |
+| POST | /del-type | id | Delete a type by its ID. |
 
 **⚙️ Configuration**
 
@@ -80,9 +86,3 @@ The following are the typical RESTful endpoints provided by this backend. The re
 * For production deployment, ensure debug mode is disabled and use a proper WSGI server (like Gunicorn or uWSGI) instead of running python app.py directly.
 * Manage sensitive configurations (like database credentials) using environment variables.
 
-**🤝 Contributing**
-Contributions are always welcome!
-* Fork the repository.
-* Create a new branch (git checkout -b feature/my-feature).
-* Make your changes and commit them (git commit -m 'Add new feature').
-* Push to the branch (git push origin feature/my-feature).Open a Pull Request.
